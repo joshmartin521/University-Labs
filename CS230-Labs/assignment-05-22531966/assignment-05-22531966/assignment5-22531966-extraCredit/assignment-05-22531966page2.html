@@ -1,0 +1,344 @@
+
+<html id="everything">
+<head>
+    <title>Josh Martin Assignment 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Bootstrap for the form styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Extra Styles for the Bootstrap Forms */
+        h1 {
+            font: 30px Verdana;
+            text-align: center;
+        }
+        h2 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        legend {
+            padding: 10px;
+            font: 30px Verdana
+        }
+        #customersButton,
+        #itemsButton,
+        #ordersButton {
+            background-color: #264fd4;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="button-container">
+        <button id="customersButton"> customers </button>
+        <button id="itemsButton"> items </button>
+        <button id="ordersButton"> orders </button>
+    </div>
+
+    <!--Form for adding an item to the database-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="addItemForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Add Item to Database</legend>
+
+                        <!-- Text Input - Manufacturer -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstname">Manufacturer</label>
+                            <div class="col-md-4">
+                                <input id="manufacturer" name="manufacturer" placeholder="manufacturer" class="form-control input-md" required>
+                                <span class="help-block">Enter the Manufacturer Name</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Model -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surname">Model</label>
+                            <div class="col-md-4">
+                                <input id="model" name="model" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Please enter the model</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Price -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surname">Price</label>
+                            <div class="col-md-4">
+                                <input id="price" name="price" type="text" placeholder="Price" class="form-control input-md" required>
+                                <span class="help-block">Please enter the Price</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Send Item Data" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="addedItem"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!--Form for getting the item database and displaying it on the page-->
+     <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="getItemDatabaseForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Show Items Database</legend>
+
+                        <!-- Textarea -->
+                        <div id = "textArea" class="row justify-content-center" style="text-align: center;">
+                            <p style="text-align: center;">Contents of the database will be displayed here</p>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Get Item Database" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form for deleting an item from the database-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="deleteItemForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Delete An Item</legend>
+                            
+                        <!-- Text Input - Manufacturer -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="manufacturerdel">Manufacturer</label>
+                            <div class="col-md-4">
+                                <input id="manufacturerdel" name="manufacturerdel" placeholder="Manufacturer" class="form-control input-md" required>
+                                <span class="help-block">Manufacturer</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Model -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="modeldel">Model</label>
+                            <div class="col-md-4">
+                                <input id="modeldel" name="modeldel" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Model</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Delete Matching Items" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="deletedItem"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form for updating an items price in the database-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="updateItemForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Update An Items Price</legend>
+                            
+                        <!-- Text Input - Manufacturer -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="umanufacturer">Manufacturer</label>
+                            <div class="col-md-4">
+                                <input id="umanufacturer" name="umanufacturer" type="text" placeholder="Manufacturer" class="form-control input-md" required>
+                                <span class="help-block">Manufacturer</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Model -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="umodel">Model</label>
+                            <div class="col-md-4">
+                                <input id="umodel" name="umodel" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Model</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - New Price -->
+                        <h1>New Price</h1>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="uprice">New Price</label>
+                            <div class="col-md-4">
+                                <input id="uprice" name="uprice" type="text" placeholder="New Price" class="form-control input-md" required>
+                                <span class="help-block">New Price</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Update Item" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="updatedItem"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <script>
+        $(document).ready(function () {
+    
+            // handle "Add item to Database" submit button click
+            $('#addItemForm').submit(function (e) { 
+                //get the values from the form
+                var user = {
+                    Manufacturer: $('input[name=manufacturer]').val(),
+                    Model: $('input[name=model]').val(),
+                    Price: $('input[name=price]').val(),
+    
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/items',
+                    data: user
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#addItemForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#addedItem').text(data);
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            // handle "Get item Database" submit button click
+            $('#getItemDatabaseForm').submit(function (e) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/items'
+                })
+                    .done(function (data) {
+                        // display the database in the textarea
+                        $('#textArea').html(JSON.stringify(data));  
+                    });
+                e.preventDefault();
+            });
+
+            // handle "Delete Item" submit button click
+            $('#deleteItemForm').submit(function (e) {
+                //get the values from the form
+                var user = {
+                    Manufacturer: $('input[name=manufacturerdel]').val(),
+                    Model: $('input[name=modeldel]').val()
+                };
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/items',
+                    data: user
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#deleteItemForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#deletedItem').text(data);
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            // handle "Update Item" submit button click
+            $('#updateItemForm').submit(function (e) {
+                //get the values from the form
+                var item = {
+                    Manufacturer: $('input[name=umanufacturer]').val(),
+                    Model: $('input[name=umodel]').val(),
+                    Price: $('input[name=uprice]').val()
+                };
+
+                $.ajax({
+                    type: 'PUT',
+                    url: '/items',
+                    data: item
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#updateItemForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#updatedItem').text(data);
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            //Button click event handlers
+            $('#customersButton').click(function(){
+                window.location.href = "/";
+            });
+
+            $('#itemsButton').click(function(){
+                window.location.href = "/links/items"
+            });
+
+            $('#ordersButton').click(function(){
+                window.location.href = "/links/orders";
+            });
+        });
+
+
+    
+    </script>
+
+</body>
+
+</html>
+
+<!--Tested on Chrome with Windows 11-->

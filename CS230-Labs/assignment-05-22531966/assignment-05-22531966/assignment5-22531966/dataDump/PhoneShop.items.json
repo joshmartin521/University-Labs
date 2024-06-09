@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "6615b352af9958525653a4f0"
+  },
+  "Manufacturer": "Apple",
+  "Model": "iPhone 15",
+  "Price": 900
+},
+{
+  "_id": {
+    "$oid": "661fcfdbc00e8dafe006836b"
+  },
+  "Manufacturer": "Samsung",
+  "Model": "Galaxy S24 Ultra",
+  "Price": 1400
+},
+{
+  "_id": {
+    "$oid": "661fd006c00e8dafe006836d"
+  },
+  "Manufacturer": "Samsung",
+  "Model": "Galaxy S23 FE",
+  "Price": 700
+},
+{
+  "_id": {
+    "$oid": "661fd02bc00e8dafe0068370"
+  },
+  "Manufacturer": "Apple",
+  "Model": "iPhone 12",
+  "Price": 530
+},
+{
+  "_id": {
+    "$oid": "661fd03bc00e8dafe0068372"
+  },
+  "Manufacturer": "Google",
+  "Model": "Pixel 7a",
+  "Price": 490
+},
+{
+  "_id": {
+    "$oid": "661fd05bc00e8dafe0068374"
+  },
+  "Manufacturer": "Motorola",
+  "Model": "Moto G54",
+  "Price": 200
+},
+{
+  "_id": {
+    "$oid": "661fd06fc00e8dafe0068376"
+  },
+  "Manufacturer": "Apple",
+  "Model": "iPhone 14",
+  "Price": 740
+},
+{
+  "_id": {
+    "$oid": "661fd080c00e8dafe0068378"
+  },
+  "Manufacturer": "Apple",
+  "Model": "iPhone 13",
+  "Price": 670
+},
+{
+  "_id": {
+    "$oid": "661fd0a4c00e8dafe006837a"
+  },
+  "Manufacturer": "Google",
+  "Model": "Pixel 8",
+  "Price": 730
+},
+{
+  "_id": {
+    "$oid": "661fd0b9c00e8dafe006837c"
+  },
+  "Manufacturer": "Samsung",
+  "Model": "Galaxy A15",
+  "Price": 210
+}]

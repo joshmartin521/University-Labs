@@ -1,0 +1,450 @@
+
+<html id="everything">
+<head>
+    <title>Josh Martin Assignment 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Bootstrap for the form styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Extra Styles for the Bootstrap Forms */
+        h1 {
+            font: 30px Verdana;
+            text-align: center;
+        }
+        h2 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        legend {
+            padding: 10px;
+            font: 30px Verdana
+        }
+        #customersButton,
+        #itemsButton,
+        #ordersButton {
+            background-color: #264fd4;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<!--Form For Adding a order to the database-->
+
+<body>
+
+    <div class="button-container">
+        <button id="customersButton"> customers </button>
+        <button id="itemsButton"> items </button>
+        <button id="ordersButton"> orders </button>
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="addOrderForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Add Order to Database</legend>
+
+                        <!-- Text Input - email -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email</label>
+                            <div class="col-md-4">
+                                <input id="email" name="email" placeholder="Email" class="form-control input-md" required>
+                                <span class="help-block">Enter your Email</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - mobile -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobile">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="mobile" name="mobile" type="text" placeholder="Mobile" class="form-control input-md" required>
+                                <span class="help-block">Enter your Mobile</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - manufacturer -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="manufacturer1">Manufacturer</label>
+                            <div class="col-md-4">
+                                <input id="manufacturer1" name="manufacturer1" type="text" placeholder="Manufacturer" class="form-control input-md" required>
+                                <span class="help-block">Enter Manufacturer</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - model -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="model1">Model</label>
+                            <div class="col-md-4">
+                                <input id="model1" name="model1" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Enter Model</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - quantity -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="quantity1">Quantity</label>
+                            <div class="col-md-4">
+                                <input id="quantity1" name="quantity1" type="text" placeholder="Quantity" class="form-control input-md" required>
+                                <span class="help-block">Enter Quantity</span>
+                            </div>
+                        </div>
+
+                        <!-- Container for dynamically added items -->
+                        <div id="dynamicItemsContainer"></div>
+
+                        <!--Button that will add another manufacturer, model and quantity input field when clicked-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="addAnotherItem"></label>
+                            <div class="col-md-4">
+                                <button id="addAnotherItem">Add Another Item</button>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Send Order Data" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="addedOrder"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!--Form for getting the order database and displaying it on the page-->
+     <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="getOrderDatabaseForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Show Orders Database</legend>
+
+                        <!-- Textarea -->
+                        <div id = "textArea" class="row justify-content-center" style="text-align: center;">
+                            <p style="text-align: center;">Contents of the database will be displayed here</p>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Get Order Database" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form for deleting an order from the database-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="deleteOrderForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Delete An order</legend>
+                            
+                        <!-- Text Input - email -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="emaildel">Email</label>
+                            <div class="col-md-4">
+                                <input id="emaildel" name="emaildel" placeholder="Email" class="form-control input-md" required>
+                                <span class="help-block">Email</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - mobile -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobiledel">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="mobiledel" name="mobiledel" type="text" placeholder="Mobile" class="form-control input-md" required>
+                                <span class="help-block">Mobile</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - num -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="numdel">Order Number</label>
+                            <div class="col-md-4">
+                                <input id="numdel" name="numdel" type="text" placeholder="Order Number" class="form-control input-md" required>
+                                <span class="help-block">If they only have 1 order, enter 1</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Delete Matching Orders" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="deletedOrder"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form for updating an order in the database-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="updateOrderForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Add Item to Order</legend>
+                            
+                        <!-- Text Input - email -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="uemail">Email</label>
+                            <div class="col-md-4">
+                                <input id="uemail" name="uemail" type="text" placeholder="Email" class="form-control input-md" required>
+                                <span class="help-block">Email</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - mobile -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="umobile">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="umobile" name="umobile" type="text" placeholder="Mobile" class="form-control input-md" required>
+                                <span class="help-block">Mobile</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - unum -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="unum">Order Number</label>
+                            <div class="col-md-4">
+                                <input id="unum" name="unum" type="text" placeholder="Order Number" class="form-control input-md" required>
+                                <span class="help-block">If there is only one order, enter 1</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - model -->
+                        <h1>New Item to order</h1>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="umodel">Model</label>
+                            <div class="col-md-4">
+                                <input id="umodel" name="umodel" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Model</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - quantity -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="uquantity">Quantity</label>
+                            <div class="col-md-4">
+                                <input id="uquantity" name="uquantity" type="text" placeholder="Quantity" class="form-control input-md" required>
+                                <span class="help-block">Quantity</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Update Order" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="updatedOrder"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <br />
+
+    <script>
+        $(document).ready(function () {
+            var num = 1;
+
+            // handle "Add Another order" button click
+            $('#addAnotherItem').click(function () {
+                num++;
+                //add another manufacturer, model and quantity input field
+                $('#dynamicItemsContainer').append(`
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="manufacturer`+ num +`">Manufacturer</label>
+                            <div class="col-md-4">
+                                <input id="manufacturer`+num+`" name="manufacturer`+num+`" type="text" placeholder="Manufacturer" class="form-control input-md" required>
+                                <span class="help-block">Enter Manufacturer</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="model`+num+`">Model</label>
+                            <div class="col-md-4">
+                                <input id="model`+num+`" name="model`+num+`" type="text" placeholder="Model" class="form-control input-md" required>
+                                <span class="help-block">Enter Model</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="quantity`+num+`">Quantity</label>
+                            <div class="col-md-4">
+                                <input id="quantity`+num+`" name="quantity`+num+`" type="text" placeholder="Quantity" class="form-control input-md" required>
+                                <span class="help-block">Enter Quantity</span>
+                            </div>
+                        </div>
+                `
+                );
+            });
+
+            //handle add order to database button click
+            $('#addOrderForm').submit(function (e) {
+                //get the values from the form
+                var order = {
+                    Email: $('input[name=email]').val(),
+                    Mobile: $('input[name=mobile]').val(),
+                    orders: []
+                };
+
+                //loop through the number of items and add them to the order object
+                var ordername;
+                for (var i = 1; i <= num; i++) {
+                    var newOrder = {
+                        Manufacturer: $('input[name=manufacturer' + i + ']').val(),
+                        Model: $('input[name=model' + i + ']').val(),
+                        Quantity: $('input[name=quantity' + i + ']').val()
+                    };
+                    order.orders.push(newOrder);
+                }
+                console.log(order);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/orders',
+                    data: order
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#addOrderForm')[0].reset();
+                        //add alert to page
+                        $('#dynamicItemsContainer').empty();
+                        alert(data);
+                        $('#addedOrder').text(data);
+                        num = 1;
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            // handle "Get order Database" submit button click
+            $('#getOrderDatabaseForm').submit(function (e) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/orders'
+                })
+                    .done(function (data) {
+                        // display the database in the textarea
+                        $('#textArea').html(JSON.stringify(data));
+                    });
+                e.preventDefault();
+            });
+
+            //handle delete order button click
+            $('#deleteOrderForm').submit(function (e) {
+                //get the values from the form
+                var order = {
+                    email: $('input[name=emaildel]').val(),
+                    mobile: $('input[name=mobiledel]').val(),
+                    num: $('input[name=numdel]').val()
+                };
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/orders',
+                    data: order
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#deleteOrderForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#deletedOrder').text(data);
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            //handle update order button click
+            $('#updateOrderForm').submit(function (e) {
+                //get the values from the form
+                var order = {
+                    email: $('input[name=uemail]').val(),
+                    mobile: $('input[name=umobile]').val(),
+                    num: $('input[name=unum]').val(),
+                    model: $('input[name=umodel]').val(),
+                    quantity: $('input[name=uquantity]').val()
+                };
+
+                $.ajax({
+                    type: 'PUT',
+                    url: '/orders',
+                    data: order
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#updateOrderForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#updatedOrder').text(data);
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+
+            //handle button clicks to navigate to other pages
+            $('#customersButton').click(function(){
+                window.location.href = "/";
+            });
+
+            $('#itemsButton').click(function(){
+                window.location.href = "/links/items"
+            });
+
+            $('#ordersButton').click(function(){
+                window.location.href = "/links/orders";
+            });
+        });
+
+
+    
+    </script>
+
+</body>
+
+</html>
+
+<!--Tested on Chrome with Windows 11-->
