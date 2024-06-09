@@ -1,0 +1,139 @@
+            .shape{
+                margin: auto;
+            }
+            .symbols{
+                display: none;
+                border-radius: 50%;
+                background-color: #818688;
+            }
+            .first{
+                width: 0;
+	            height: 0;
+	            border-left: 100px solid transparent;
+	            border-right: 100px solid transparent;
+	            border-bottom: 100px solid #e46262;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .first:hover button{
+                display: block;
+            }
+            .second{
+                border-bottom: 20px solid #ffffff;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                height: 0;
+                width: 200px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .second:hover button{
+                display: block;
+            }
+            .third{
+                border-bottom: 80px solid #ffc77d;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                height: 0;
+                width: 240px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .third:hover button{
+                display: block;
+            }
+            .fourth{
+                border-bottom: 20px solid #ffffff;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                height: 0;
+                width: 400px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .five{
+                border-bottom: 80px solid #fff678;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                height: 0;
+                width: 440px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .five:hover button{
+                display: block;
+            }
+            .six{
+                border-bottom: 80px solid #79e4ff;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                height: 0;
+                width: 600px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .six:hover button{
+                display: block;
+            }
+            .seven{
+                border-bottom: 80px solid hsl(17, 100%, 75%);
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                height: 0;
+                width: 760px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .seven:hover button{
+                display: block;
+            }
+            .eight{
+                border-bottom: 80px solid #83ff78;
+                border-left: 80px solid transparent;
+                border-right: 80px solid transparent;
+                height: 0;
+                width: 920px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .eight:hover button{
+                display: block;
+            }
+            .container{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 80px;
+            }
+            .topcontainer{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 140px;
+            }
+            .counter{
+                background-color: #818688;
+                width:40px;
+                height: 40px;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid black;
+            }
+            .date{
+                text-align: center;
+            }
+
+            #adult{
+                background-color: orange;
+            }
+            #child{
+                background-color: grey;
+            }
