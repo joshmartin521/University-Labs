@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">                            <!--imports/links-->
+        <link rel="stylesheet" href="assignment-02.css">
+        <script src="assignment-02.js"></script>
+    </head>
+    <body>
+        <div class="body">
+            <h1 id ="bestGame">0</h1><button class="start" id="startButton" onclick="clicked(1)">START</button><h1 id = "lastGame">0</h1>       <!--3 centre buttons/scores-->
+        </div>
+        <div class ="firstbase">
+        </div>
+        <div class ="secondbase">
+        </div>                                  <!--4black circle behind buttons-->
+        <div class ="thirdbase">
+        </div>
+        <div class ="fourthbase">
+        </div>
+        <div class="buttons2">
+            <button class="blue button" id="blueButton" onclick="input(3,'blueButton')" disabled></button>
+        </div>
+        <div id = "indicator"></div>
+        <div class="buttons4">
+            <button class="yellow button" id="yellowButton" onclick="input(4, 'yellowButton')" disabled></button>
+        </div>                                                                                                              <!--4 coloured buttons-->
+        <div class = "buttons1">
+            <button class="green button" id="greenButton" onclick="input(1, 'greenButton')" disabled></button>
+        </div>
+        <div class = "buttons3">
+            <button class="red button" id="redButton" onclick="input(2, 'redButton')" disabled></button>
+        </div>
+    </body>
+</html>                                                             <!--tested with Chrome Version 122.0.6261.112 (Official Build) (64-bit) on windows 11-->

@@ -1,0 +1,124 @@
+          
+            .body{
+                position: absolute;
+                top: 30%;
+                left: 40%; 
+                display: flex;  
+                justify-content: center;                /*Positioning of black centre ball*/
+                align-items: center; 
+                height: 40%;
+                width: 20%;
+                background-color: black;
+                border-radius: 50%;
+            }
+
+            #indicator{
+                position: absolute;
+                top: 55%;
+                left: 49.5%; 
+                align-items: center;                    /*positioning of indicator light*/
+                height: 2%;
+                width: 1%;
+                background-color: red;
+                border-radius: 50%;
+            }
+            
+            h1{ 
+                background-color: white;
+                border-radius: 10px;
+                width: 50px;                            /*Style for H1 text*/
+                text-align: center;
+                font-family: "Orbitron", sans-serif;
+            }
+
+            .firstbase,.thirdbase,.secondbase,.fourthbase{
+                position: absolute;
+                transform: translate(-50%, -50%);
+                justify-content: center;   
+                align-items: center; 
+                height: 180px;
+                width: 180px;
+                background-color: black;
+                border-radius: 50%;
+            }
+
+            .firstbase{
+                top: 35%;
+                left: 42%;                          /*positioning for black circle under first button*/ 
+            }
+            .thirdbase{
+                top: 35%;
+                left: 58%;  
+            }
+            .secondbase{
+                top: 65%;
+                left: 42%;  
+            }
+            .fourthbase{
+                top: 65%;
+                left: 58%;  
+            }
+
+            .buttons1{
+                position: absolute;
+                top: 35%;
+                left: 42%;                              /*positioning for buttons*/
+                transform: translate(-50%, -50%);
+            }
+
+            .buttons3{
+                position: absolute;
+                top: 35%;
+                left: 58%; 
+                transform: translate(-50%, -50%);
+            }
+
+            .buttons2{
+                position: absolute;
+                top: 65%;
+                left: 42%; 
+                transform: translate(-50%, -50%);
+            }
+
+            .buttons4{
+                position: absolute;
+                top: 65%;
+                left: 58%; 
+                transform: translate(-50%, -50%);
+            }
+       
+            #redButton,#greenButton,#blueButton,#yellowButton{
+                height: 150px;
+                width:150px;
+                border-radius: 50%;
+            }
+            .green
+            {
+                background-color: green;
+            }
+            .red
+            {
+                background-color: red;
+            }
+            .blue
+            {
+                background-color: blue;
+            }
+            .yellow
+            {
+                background-color: yellow;
+            }
+            .start
+            {
+                font-family: "Orbitron", sans-serif;
+                background-color: white;
+                border-radius: 10px;                    /*Styling start button*/
+                height: 42px;
+            }
+            .start:hover
+            {
+                background-color: grey;
+            }
+
+
+            
