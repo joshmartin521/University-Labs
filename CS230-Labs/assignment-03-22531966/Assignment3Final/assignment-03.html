@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="assignment-03.js"></script>
+    <link rel="stylesheet" href="assignment-03.css">
+</head>
+<body>
+    <div id = 'table'>
+    <table id="myTable">
+        <thead>
+            <tr id = "headers">
+                <th id="NameCol">Name</th>
+                <th id="IDCol">Student ID</th>
+                <th id="Assign1Col" onclick="highlightCol('Assignment1')">Assignment 1</th>
+                <th id="Assign2Col" onclick="highlightCol('Assignment2')">Assignment 2</th>
+                <th id="Assign3Col" onclick="highlightCol('Assignment3')">Assignment 3</th>
+                <th id="Assign4Col" onclick="highlightCol('Assignment4')">Assignment 4</th>
+                <th id="Assign5Col" onclick="highlightCol('Assignment5')">Assignment 5</th>
+                <th onclick="toggleGradeRepresentation()">Average[%]</th>
+            </tr>
+        </thead>
+        <tbody id="data-output"></tbody>
+    </table>
+    </div>
+
+    <p id="unsub">There are _ unsubmitted assignments</p>
+    <div id = 'buttons'>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addAssignment()">Add Column</button>
+    <button onclick = "save()">Save State</button>
+    <button onclick = "restore()">return to last save</button>
+    <button onclick ="deleteRow()">Delete Row</button> 
+    <!--<button onclick ="deleteCol()">Delete Col</button> -->
+    </div>
+</body>
+</html>
+
+<!--Tested with Chrome on windows 11-->

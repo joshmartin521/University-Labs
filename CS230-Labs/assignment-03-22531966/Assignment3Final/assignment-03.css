@@ -1,0 +1,24 @@
+th {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(odd) {
+    background-color: #e2e2e2;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: Verdana, sans-serif;
+}
+#table,#buttons, #unsub{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Remove default margin */
+}
