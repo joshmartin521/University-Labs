@@ -1,0 +1,570 @@
+<!--Using Elements from John Keetings Video tutorials as a starting point -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Josh Martin Assignment 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Bootstrap for the form styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Extra Styles for the Bootstrap Forms */
+        h1 {
+            font: 30px Verdana;
+            text-align: center;
+        }
+        h2 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        legend {
+            padding: 10px;
+            font: 30px Verdana
+        }
+    </style>
+</head>
+
+<!--Form For Adding a user to the database-->
+
+<body>
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="addUserForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Add User to Database</legend>
+
+                        <!-- Text Input - Title -->
+                        <!-- Text Input - Title -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="title">Title</label>
+                            <div class="col-md-4">
+                                <input type="radio" id="title1" name="title" value="Mr">
+                                <label for="title1">Mr</label>
+                                <input type="radio" id="title2" name="title" value="Ms">
+                                <label for="title2">Ms</label>
+                                <input type="radio" id="title3" name="title" value="Mrs">
+                                <label for="title3">Mrs</label>
+                                <input type="radio" id="title4" name="title" value="Miss">
+                                <label for="title4">Miss</label>
+                                <input type="radio" id="title5" name="title" value="Dr">
+                                <label for="title5">Dr</label>
+                                <input type="radio" id="title6" name="title" value="Mx">
+                                <label for="title6">Mx</label>
+                                <input type="radio" id="title7" name="title" value="Other">
+                                <label for="title7">Other</label>
+                                <input type="text" id="other_title" name="other_title" style="display: none;" placeholder="Please specify">
+                                <span class="help-block">Please enter your title</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - First Name -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstname">First Name</label>
+                            <div class="col-md-4">
+                                <input id="firstname" name="firstname" placeholder="First Name" class="form-control input-md" required>
+                                <span class="help-block">Please enter your first name!</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Surname -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surname">Surname</label>
+                            <div class="col-md-4">
+                                <input id="surname" name="surname" type="text" placeholder="Surname" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Surname</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Mobile -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobile">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="moblile" name="mobile" type="text" placeholder="mobile" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Mobile</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Email -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">Email</label>
+                            <div class="col-md-4">
+                                <input id="email" name="email" type="text" placeholder="email" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Email</span>
+                            </div>
+                        </div>
+
+                        <!-- Text Input - Home Address -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hal1">Home Address Line 1</label>
+                            <div class="col-md-4">
+                                <input id="hal1" name="hal1" type="text" placeholder="Home Address Line 1" class="form-control input-md" required>
+                                <span class="help-block">Home Address Line 1</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hal2">Home Address Line 2</label>
+                            <div class="col-md-4">
+                                <input id="hal2" name="hal2" type="text" placeholder="Home Address Line 2" class="form-control input-md">
+                                <span class="help-block">Home Address Line 2</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="htown">Home Address town</label>
+                            <div class="col-md-4">
+                                <input id="htown" name="htown" type="text" placeholder="Home Address town" class="form-control input-md" required>
+                                <span class="help-block">Home Address town</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hcity">Home Address city</label>
+                            <div class="col-md-4">
+                                <input id="hcity" name="hcity" type="text" placeholder="Home Address city" class="form-control input-md" required>
+                                <span class="help-block">Home Address city</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="heircode">Home Address Eircode</label>
+                            <div class="col-md-4">
+                                <input id="heircode" name="heircode" type="text" placeholder="Home Address eircode" class="form-control input-md">
+                                <span class="help-block">Home Address eircode</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="useSameAddress">use same address for shipping address?</label>
+                            <div class="col-md-4">
+                                <input type="radio" id="yes" name="useSameAddress" value="yes" checked = "checked">
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="no" name="useSameAddress" value="no">
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+
+                        <div id ="shippingField" style="display: none;">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sal1">Shipping Address Line 1</label>
+                            <div class="col-md-4">
+                                <input id="sal1" name="sal1" type="text" placeholder="Shipping Address Line 1" class="form-control input-md">
+                                <span class="help-block">Shipping Address Line 1</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sal2">Shipping Address Line 2</label>
+                            <div class="col-md-4">
+                                <input id="sal2" name="sal2" type="text" placeholder="Shipping Address Line 2" class="form-control input-md">
+                                <span class="help-block">Shipping Address Line 2</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="stown">Shipping Address town</label>
+                            <div class="col-md-4">
+                                <input id="stown" name="stown" type="text" placeholder="Shipping Address town" class="form-control input-md">
+                                <span class="help-block">Shipping Address town</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="scity">Shipping Address city</label>
+                            <div class="col-md-4">
+                                <input id="scity" name="scity" type="text" placeholder="Shipping Address city" class="form-control input-md">
+                                <span class="help-block">Shipping Address city</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="seircode">Shipping Address Eircode</label>
+                            <div class="col-md-4">
+                                <input id="seircode" name="seircode" type="text" placeholder="Shipping Address eircode" class="form-control input-md">
+                                <span class="help-block">Shipping Address eircode</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Send User Data" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="addedUser"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+
+<!--Form for getting the user database and displaying it on the page-->
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="getUserDatabaseForm" class="form-horizontal">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Show User Database</legend>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="showUserDatabase">User Database</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" id="showUserDatabase"
+                                    name="showUserDatabase">Retrieved Database displayed here!</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Get User Database" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form For Deleting a Specified user from the database-->
+
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="deleteUserForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Delete A user</legend>
+                            
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstnamedel">First Name</label>
+                            <div class="col-md-4">
+                                <input id="firstnamedel" name="firstnamedel" placeholder="First Name" class="form-control input-md" required>
+                                <span class="help-block">Please enter your first name!</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="surnamedel">Surname</label>
+                            <div class="col-md-4">
+                                <input id="surnamedel" name="surnamedel" type="text" placeholder="Surname" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Surname</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mobliledel">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="mobiledel" name="mobiledel" type="text" placeholder="mobile" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Mobile</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="emaildel">Email</label>
+                            <div class="col-md-4">
+                                <input id="emaildel" name="emaildel" type="text" placeholder="email" class="form-control input-md" required>
+                                <span class="help-block">Please enter your Email</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Delete Matching User(s)" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="deletedUser"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Form for Updating a specified user's shipping Address-->
+
+    <div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form id="updateUserForm" class="form-horizontal">
+                    <fieldset>
+                        <legend>Update A Users Shipping Address</legend>
+                            
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hal1">First Name</label>
+                            <div class="col-md-4">
+                                <input id="ufname" name="ufname" type="text" placeholder="First Name" class="form-control input-md" required>
+                                <span class="help-block">First Name To Update</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hal1">Surname</label>
+                            <div class="col-md-4">
+                                <input id="ulname" name="ulname" type="text" placeholder="Surname" class="form-control input-md" required>
+                                <span class="help-block">Surname To Update</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="hal1">Mobile</label>
+                            <div class="col-md-4">
+                                <input id="umobile" name="umobile" type="text" placeholder="Mobile" class="form-control input-md" required>
+                                <span class="help-block">Mobile To Update</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sal1_">Shipping Address Line 1</label>
+                            <div class="col-md-4">
+                                <input id="sal1_" name="sal1_" type="text" placeholder="Shipping Address Line 1" class="form-control input-md" required>
+                                <span class="help-block">Shipping Address Line 1</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sal2_">Shipping Address Line 2</label>
+                            <div class="col-md-4">
+                                <input id="sal2_" name="sal2_" type="text" placeholder="Shipping Address Line 2" class="form-control input-md">
+                                <span class="help-block">Shipping Address Line 2</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="stown_">Shipping Address town</label>
+                            <div class="col-md-4">
+                                <input id="stown_" name="stown_" type="text" placeholder="Shipping Address town" class="form-control input-md" required>
+                                <span class="help-block">Shipping Address town</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="scity_">Shipping Address city</label>
+                            <div class="col-md-4">
+                                <input id="scity_" name="scity_" type="text" placeholder="Shipping Address city" class="form-control input-md" required>
+                                <span class="help-block">Shipping Address city</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="seircode_">Shipping Address Eircode</label>
+                            <div class="col-md-4">
+                                <input id="seircode_" name="seircode_" type="text" placeholder="Shipping Address eircode" class="form-control input-md">
+                                <span class="help-block">Shipping Address eircode</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <input type="submit" value="Update User" class="btn btn-primary">
+                            </div>
+                        </div>
+
+                        <div><p style = "text-align: center;" id="updatedUser"></p></div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+    
+            // handle "Add User to Database" submit button click
+            $('#addUserForm').submit(function (e) {
+                var title;
+                // Check if the "Other" option is selected
+                if ($('#title7').is(':checked')) {
+                    // If selected, get the value from the text input
+                    title = $('#other_title').val();
+                } else {
+                    // If not selected, get the value from the checked radio button
+                    title = $('input[name=title]:checked').val();
+                    if (typeof title === 'undefined') {
+                        title = '';
+                    }
+                }
+    
+                //get the values from the form
+                var user = {
+                    title: title,
+                    firstname: $('input[name=firstname]').val(),
+                    surname: $('input[name=surname]').val(),
+                    mobile: $('input[name=mobile]').val(),
+                    email: $('input[name=email]').val(),
+                    hal1: $('input[name=hal1]').val(),
+                    hal2: $('input[name=hal2]').val(),
+                    htown: $('input[name=htown]').val(),
+                    hcity: $('input[name=hcity]').val(),
+                    heircode: $('input[name=heircode]').val(),
+    
+                };
+
+                if ($('#no').is(':checked')) {
+                    user.sal1 = $('input[name=sal1]').val();
+                    user.sal2 = $('input[name=sal2]').val();
+                    user.stown = $('input[name=stown]').val();
+                    user.scity = $('input[name=scity]').val();
+                    user.seircode = $('input[name=seircode]').val();
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/users',
+                    data: user
+                })
+                    .done(function (data) {
+                        // reset the form for next time!
+                        $('#addUserForm')[0].reset();
+                        //add alert to page
+                        alert(data);
+                        $('#addedUser').text(data);
+                        //hide shippingField and remove required tag since by default users use same address for shipping
+                        $('input[name=sal1]').prop('required',false);
+                        $('input[name=stown]').prop('required',false);
+                        $('input[name=scity]').prop('required',false);
+                        $('#shippingField').hide();
+                        $('#other_title').hide();
+                    });
+                //prevent the default action of form refreshing the page when you submit it
+                e.preventDefault();
+            });
+    
+            // handle "Get User Database" submit button click
+            $('#getUserDatabaseForm').submit(function (e) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/users'
+                })
+                    .done(function (data) {
+                        // display the database in the textarea
+                        $('#showUserDatabase').val(JSON.stringify(data, null, 2)).trigger('input');
+                    });
+                e.preventDefault();
+            });
+    
+            // handle "Delete A User" submit button click
+            $('#deleteUserForm').submit(function (e) {
+                //get the values from the form
+                var userdel = {
+                    firstname: $('input[name=firstnamedel]').val(),
+                    surname: $('input[name=surnamedel]').val(),
+                    mobile: $('input[name=mobiledel]').val(),
+                    email: $('input[name=emaildel]').val(),
+                };
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/users',
+                    data: userdel
+                })
+                    .done(function (data) {
+                        //reset the form
+                        $('#deleteUserForm')[0].reset();
+                        //alert the user
+                        alert(data);
+                        $('#deletedUser').text(data);
+                    });
+                e.preventDefault();
+            });
+    
+    
+            // handle "Update A User" submit button click
+            $('#updateUserForm').submit(function (e) {
+                //get form values
+                var userup = {
+                    ufname: $('input[name=ufname]').val(),
+                    ulname: $('input[name=ulname]').val(),
+                    umobile: $('input[name=umobile]').val(),
+                    sal1: $('input[name=sal1_]').val(),
+                    sal2: $('input[name=sal2_]').val(),
+                    stown: $('input[name=stown_]').val(),
+                    scity: $('input[name=scity_]').val(),
+                    seircode: $('input[name=seircode_]').val(),
+                };
+                $.ajax({
+                    type: 'PUT',
+                    url: '/users',
+                    data: userup
+                })
+                    .done(function (data) {
+                        //reset the from
+                        $('#updateUserForm')[0].reset();
+                        //alert the user
+                        alert(data);
+                        $('#updatedUser').text(data);
+                    });
+                e.preventDefault();
+            });
+    
+            //resize the text area displaying the user database
+            $("#showUserDatabase").on("input", function () {
+                this.style.height = (this.scrollHeight) + "px;overflow-y:hidden;";
+                this.style.height = "auto";
+                this.style.height = (this.scrollHeight) + "px";
+            });
+
+            // When any radio button is clicked
+            $('input[name="title"]').change(function () {
+                // If "Other" radio button is checked
+                if ($('#title7').is(':checked')) {
+                    // Show the text box for other title
+                    $('#other_title').show().focus();
+                } else {
+                    // Hide the text box if "Other" radio button is not checked
+                    $('#other_title').hide();
+                }
+            });
+    
+            // When user types in the text input
+            $('#other_title').on('input', function () {
+                // Update the value of the "Other" radio button
+                $('#title7').val($(this).val());
+            });
+
+            //if the user doesn't want to use the same address for shipping
+            //show the shippingField and make certain sections required
+            $('input[name="useSameAddress"]').change(function () {
+                // If "Other" radio button is checked
+                if ($('#no').is(':checked')) {
+                    // Show the text box for other title
+                    $('#shippingField').show();
+                    $('input[name=sal1]').prop('required',true);
+                    $('input[name=stown]').prop('required',true);
+                    $('input[name=scity]').prop('required',true);
+                } else {
+                    // Hide the text box if "Other" radio button is not checked
+                    $('#shippingField').hide();
+                    $('input[name=sal1]').prop('required',false);
+                    $('input[name=stown]').prop('required',false);
+                    $('input[name=scity]').prop('required',false);
+                }
+            });
+    
+        });
+    
+    </script>
+
+</body>
+
+</html>
+
+<!--Tested on Chrome with Windows 11-->
